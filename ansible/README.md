@@ -10,7 +10,7 @@ You can specify any number of hosts that you want in this file. The password
 may be skipped if SSH keys have been set up instead.
 
 ## Running the playbook
-`ansible -i hosts demo-play.yml`
+`ansible-playbook -i hosts demo-play.yml`
 
 ## Limitations
 Currently, this playbook only works on Fedora 24 and Fedora 25.

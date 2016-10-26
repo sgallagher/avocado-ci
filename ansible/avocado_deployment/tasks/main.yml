@@ -1,0 +1,16 @@
+---
+- name: Enable Avocado-lts repository
+  yum_repository:
+    name: avocado-lts
+    description: Long-term support release of Avocado testing framework
+    baseurl: https://repos-avocadoproject.rhcloud.com/static/lts/fedora-24-noarch/
+    gpgcheck: yes
+    gpgkey: https://repos-avocadoproject.rhcloud.com/static/crosa_redhat_com.gpg
+    enabled: yes
+    state: present
+
+- name: Install Avocado
+  dnf: name=avocado state=latest
+
+- name: Avocado test - Positive
+  raw: /usr/bin/avocado run /bin/true

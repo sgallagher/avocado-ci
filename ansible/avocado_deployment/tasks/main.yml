@@ -12,5 +12,17 @@
 - name: Install Avocado
   dnf: name=avocado state=latest
 
-- name: Avocado test - Positive
+- name: Avocado test - Trivial
   raw: /usr/bin/avocado run /bin/true
+
+- name: Copy example test
+  copy:
+    src: avocado_deployment/files/logtest.py
+    dest: /tmp/logtest.py
+
+- name: Avocado test - Upstream logging example
+  raw: /usr/bin/avocado --show progress run /tmp/logtest.py
+  register: logtest
+
+- name: Display upstream logging test output
+  debug: var=logtest.stdout_lines

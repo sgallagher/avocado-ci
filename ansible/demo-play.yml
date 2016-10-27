@@ -1,3 +1,8 @@
 - hosts: all
+  gather_facts: false
+  roles:
+    - python2_install
+
+- hosts: all
   roles:
     - avocado_deployment

@@ -10,10 +10,6 @@ You can specify any number of hosts that you want in this file. The password
 may be skipped if SSH keys have been set up instead.
 
 ## Running the playbook
-### First, install python 2 support files:
-`ansible -i hosts all -m raw -a "dnf -y install python2-dnf libselinux-python"`
-
-### Then run the playbook
 `ansible-playbook -i hosts demo-play.yml`
 
 ## Limitations

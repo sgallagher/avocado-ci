@@ -1,0 +1,4 @@
+---
+- name: Install Ansible python support files
+  raw: dnf -y install python2-dnf libselinux-python
+

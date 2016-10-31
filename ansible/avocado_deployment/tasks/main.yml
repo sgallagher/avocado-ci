@@ -8,9 +8,11 @@
     gpgkey: https://repos-avocadoproject.rhcloud.com/static/crosa_redhat_com.gpg
     enabled: yes
     state: present
+  become: true
 
 - name: Install Avocado
   dnf: name=avocado state=latest
+  become: true
 
 - name: Avocado test - Trivial
   raw: /usr/bin/avocado run /bin/true
